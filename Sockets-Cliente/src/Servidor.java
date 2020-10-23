@@ -17,6 +17,8 @@ class  SocketRecibir implements Runnable{
             String mensaje_texto= flujo_entrada.readUTF();
             System.out.println(mensaje_texto);
             misocket.close();
+            flujo_entrada.close();
+            servidor.close();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -32,6 +34,8 @@ class  SocketRecibir implements Runnable{
             String mensaje_texto= flujo_entrada.readUTF();
             System.out.println(mensaje_texto);
             misocket.close();
+
+
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -49,7 +53,9 @@ public class Servidor  {
         SocketRecibir hilito= new SocketRecibir();
 
         hilito.iniciarEscuchar();
-        
+
+        hilito.iniciarEscuchar();
+
 
 
     }

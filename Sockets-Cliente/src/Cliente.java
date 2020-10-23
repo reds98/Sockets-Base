@@ -12,6 +12,7 @@ class  SocketEnviar {
             DataOutputStream flujo_salida=new DataOutputStream(misocket.getOutputStream());
             flujo_salida.writeUTF(mensaje);
             flujo_salida.close();
+            misocket.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
